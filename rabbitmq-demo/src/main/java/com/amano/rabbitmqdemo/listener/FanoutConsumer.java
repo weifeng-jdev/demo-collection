@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @className: FanoutConsumer
  * @package com.amano.rabbitmqdemo.listener
  * @description: 扇形交换机消费者监听类
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 public class FanoutConsumer {

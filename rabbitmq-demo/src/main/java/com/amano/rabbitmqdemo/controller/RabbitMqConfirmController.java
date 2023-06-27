@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @className: RabbitMqConfirmController
  * @package com.amano.rabbitmqdemo.controller
  * @description: Confirm生产者发送消息测试类
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @RestController

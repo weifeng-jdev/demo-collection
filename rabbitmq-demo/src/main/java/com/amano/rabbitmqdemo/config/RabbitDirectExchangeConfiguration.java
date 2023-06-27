@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @className: RabbitConfiguration
  * @package com.amano.rabbitmqdemo.config
  * @description: rabbitmq队列配置
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @Configuration

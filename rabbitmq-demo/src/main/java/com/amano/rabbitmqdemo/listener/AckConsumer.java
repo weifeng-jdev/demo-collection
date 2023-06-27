@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @className: AckConsumer
  * @package com.amano.rabbitmqdemo.listener
  * @description: 手动ack消息监听者
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @Component

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @className: RabbitFanoutExchangeConfiguration
  * @package com.amano.rabbitmqdemo.config
  * @description: 扇形交换机配置
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @Configuration

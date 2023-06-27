@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @className: RabbitMqConsumer
  * @package com.amano.rabbitmqdemo.listener
  * @description: 简单消息消费者
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @Component

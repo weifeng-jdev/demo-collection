@@ -1,0 +1,15 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: rocketmq-demo
+
+rocketmq:
+  name-server: 192.168.31.228:9876
+  producer:
+    group: rocket-demo-producer-group
+    send-message-timeout: 3000
+    retry-times-when-send-failed: 3
+    retry-times-when-send-async-failed: 3
+  consumer:
+    group: rocket-demo-consumer-group

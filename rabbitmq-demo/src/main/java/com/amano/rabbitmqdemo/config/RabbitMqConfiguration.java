@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @className: RabbitMqConfiguration
  * @package com.amano.rabbitmqdemo.config
  * @description: RabbitMq全局配置
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @Configuration

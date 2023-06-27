@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @className: RabbitMqProducerController
  * @package com.amano.rabbitmqdemo.controller
  * @description: 测试rabbitmq生产者发送消息
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/26
  **/
 @RestController
