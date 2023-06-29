@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @className: SimpleListener
  * @package com.amano.rocketmqdemo.listener
  * @description: TODO 类描述
- * @author: weifeng
+ * @author: amano
  * @date: 2023/6/27
  **/
 @Slf4j

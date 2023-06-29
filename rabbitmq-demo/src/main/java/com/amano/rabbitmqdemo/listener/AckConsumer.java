@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * @className: AckConsumer
  * @package com.amano.rabbitmqdemo.listener
- * @description: 手动ack消息监听者
+ * @description: 手动ack消息监听者，实现ChannelAwareMessageListener接口，重写onMessage方法，手动确认消息，否则消息会一直在队列中，直到超时
  * @author: amano
  * @date: 2023/6/26
  **/

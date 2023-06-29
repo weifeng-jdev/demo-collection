@@ -21,6 +21,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 public class RabbitMqConfiguration {
+    /**
+     * 配置支持生产者消息发送ack的rabbitTemplate
+     */
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate();
@@ -48,6 +51,9 @@ public class RabbitMqConfiguration {
     @Autowired
     private AckConsumer ackConsumer;
 
+    /**
+     * 配置支持消费者消息接收ack的监听容器
+     */
     @Bean
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(cachingConnectionFactory);
