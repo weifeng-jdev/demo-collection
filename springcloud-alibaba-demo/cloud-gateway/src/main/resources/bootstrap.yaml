@@ -1,0 +1,26 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.31.228:8848
+        file-extension: yaml
+        group: cloud-alibaba
+        namespace: 22bddb89-9bd6-40b5-9994-9943ccff312f
+        shared-configs:
+          - data-id: common-dev.yaml
+            group: cloud-alibaba
+            refresh: true
+      discovery:
+        server-addr: 192.168.31.228:8848
+        group: cloud-alibaba
+        namespace: 22bddb89-9bd6-40b5-9994-9943ccff312f
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.31.228:7080
+  profiles:
+    active: dev

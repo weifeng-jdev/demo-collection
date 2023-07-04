@@ -1,0 +1,18 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: redis-demo
+  redis:
+    database: 0
+    host: 192.168.31.228
+    port: 6379
+    ssl: false
+    connect-timeout: 1000
+    lettuce:
+      pool:
+        max-active: 20
+        min-idle: 10
+        max-idle: 20
+        max-wait: 1000
+        enabled: true

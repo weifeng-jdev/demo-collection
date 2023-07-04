@@ -11,6 +11,8 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>common</module>
+        <module>springcloud-netflix-demo/product-api</module>
+        <module>springcloud-alibaba-demo/producer-api</module>
     </modules>
 
     <properties>

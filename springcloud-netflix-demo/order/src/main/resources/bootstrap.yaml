@@ -1,0 +1,38 @@
+server:
+  port: 9004
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: order
+  cloud:
+    config:
+      enabled: true
+      uri: http://127.0.0.1:9002
+      profile: dev
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    prefer-ip-address: true
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 1000
+        loggerLevel: full
+  circuitbreaker:
+    enabled: true

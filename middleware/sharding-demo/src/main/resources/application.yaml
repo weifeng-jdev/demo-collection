@@ -1,0 +1,79 @@
+spring:
+#  datasource:
+#    dynamic:
+#      primary: ds0
+#      strict: true
+#      datasource:
+#        ds0:
+#          driver-class-name: com.mysql.jdbc.Driver
+#          url: jdbc:mysql://192.168.31.228:3306/ds0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#          username: root
+#          password: mysql
+#        ds1:
+#          driver-class-name: com.mysql.jdbc.Driver
+#          url: jdbc:mysql://192.168.31.228:3306/ds1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#          username: root
+#          password: mysql
+  shardingsphere:
+    datasource:
+      names: ds0,ds1
+      ds0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://192.168.31.228:3306/ds0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: mysql
+      ds1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://192.168.31.228:3306/ds1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: mysql
+    rules:
+      sharding:
+        tables:
+          t_order:
+            actual-data-nodes: ds${0..1}.t_order_${0..1}
+            table-strategy:
+              standard:
+                sharding-column: id
+                sharding-algorithm-name: order_inline
+            key-generate-strategy:
+              key-generator-name: snowflake
+              column: id
+            database-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: ds-inline
+          t_order_item:
+            actual-data-nodes: ds${0..1}.t_order_item_${0..1}
+            table-strategy:
+              standard:
+                sharding-column: order_id
+                sharding-algorithm-name: order_item_inline
+            key-generate-strategy:
+              key-generator-name: snowflake
+              column: id
+            database-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: ds-inline
+        binding-tables: t_order,t_order_item
+        sharding-algorithms:
+          order_inline:
+            type: inline
+            props:
+              algorithm-expression: t_order_$->{id % 2}
+          order_item_inline:
+              type: inline
+              props:
+                algorithm-expression: t_order_item_$->{order_id % 2}
+          ds-inline:
+            type: inline
+            props:
+              algorithm-expression: ds$->{user_id % 2}
+    enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,0 +1,17 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Amano7401712697/springcloud_config
+          username: yuzhai740712697@gmail.com
+          password: wf1995081613
+          default-label: main
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/

@@ -1,0 +1,23 @@
+server:
+  port: 9003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: product
+          uri: lb://product
+          predicates:
+            - Path=/api/product/**
+        - id: order
+          uri: lb://order
+          predicates:
+            - Path=/api/order/**
