@@ -2,7 +2,6 @@ package com.amano.product.api;
 
 import com.amano.product.api.fallback.ProductApiFallbackFactory;
 import com.amano.product.dto.ProductDTO;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

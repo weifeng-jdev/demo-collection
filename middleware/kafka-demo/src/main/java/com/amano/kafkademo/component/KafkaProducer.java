@@ -38,7 +38,7 @@ public class KafkaProducer implements ApplicationRunner {
             logRecord.setOperatorId(1);
             logRecord.setOperatorName("测试用户");
             kafkaTemplate.send("demo-topic", objectMapper.writeValueAsString(logRecord))
-                    .addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+                    .addCallback(new ListenableFutureCallback<>() {
                         @Override
                         public void onFailure(Throwable ex) {
                             log.error("send error", ex);

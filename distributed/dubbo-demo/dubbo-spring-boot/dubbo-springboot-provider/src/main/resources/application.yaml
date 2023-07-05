@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: dubbo-springboot-provider
+  registry:
+    # 注册中心地址
+    address: zookeeper://localhost:2181
+    # 启动检查
+    check: true
+  protocol:
+    port: -1
+    name: dubbo
+  provider:
+    # 重试次数
+    retries: 2
+
