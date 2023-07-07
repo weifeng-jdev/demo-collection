@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationContextInitializer=com.amano.springbootextend.beanlifecycle.DemoApplicationContextInitializer

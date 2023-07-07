@@ -1,0 +1,12 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: springboot-extend
+  main:
+    # 允许循环依赖
+    allow-circular-references: true
+
+logging:
+  level:
+    root: info
