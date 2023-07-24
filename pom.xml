@@ -13,6 +13,7 @@
         <module>common</module>
         <module>springcloud-netflix-demo/product-api</module>
         <module>springcloud-alibaba-demo/producer-api</module>
+        <module>middleware/rabbitmq-demo</module>
     </modules>
 
     <properties>
