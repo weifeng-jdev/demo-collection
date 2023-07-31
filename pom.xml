@@ -14,6 +14,11 @@
         <module>springcloud-netflix-demo/product-api</module>
         <module>springcloud-alibaba-demo/producer-api</module>
         <module>middleware/rabbitmq-demo</module>
+        <module>middleware/kafka-demo</module>
+        <module>middleware/redis-demo</module>
+        <module>middleware/sharding-demo</module>
+        <module>middleware/elasticsearch-demo</module>
+        <module>middleware/neo4j/neo4j-java-demo</module>
     </modules>
 
     <properties>

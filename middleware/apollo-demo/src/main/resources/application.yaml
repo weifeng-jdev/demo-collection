@@ -1,0 +1,8 @@
+app:
+  id: demo01
+apollo:
+  meta: http://localhost:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,application.yml
+env: DEV
